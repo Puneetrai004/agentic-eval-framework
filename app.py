@@ -10,8 +10,13 @@ from modules.scoring import (
 from modules.visualization import show_leaderboard
 from modules import judge
 
-# Hugging Face fix
+# Force Streamlit to use /app/.streamlit instead of /.streamlit
+os.environ["STREAMLIT_HOME"] = os.path.join(os.getcwd(), ".streamlit")
 os.environ["STREAMLIT_CONFIG_DIR"] = os.path.join(os.getcwd(), ".streamlit")
+os.environ["STREAMLIT_USER_HOME"] = os.path.join(os.getcwd(), ".streamlit")
+
+# Make sure directory exists
+os.makedirs(os.environ["STREAMLIT_HOME"], exist_ok=True)
 
 st.set_page_config(page_title="Agentic Evaluation Framework", layout="wide")
 st.title("🤖 Agentic Evaluation Framework")
