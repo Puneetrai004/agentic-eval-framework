@@ -1,0 +1,10 @@
+streamlit
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+transformers
+sentence-transformers
+language-tool-python
+textstat
